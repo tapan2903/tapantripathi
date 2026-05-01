@@ -1,0 +1,347 @@
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #060a16; /* Deep dark blue */
+    --text-main: #b0c4de; /* Lighter slate blue for body text */
+    --text-highlight: #ffffff; /* Pure white */
+    --accent-blue: #1e90ff; /* Bright blue highlight */
+    --accent-cta: #007bff; /* Button blue */
+    --card-border: #1a253a; /* Subtle grid border */
+    --font-main: 'Inter', sans-serif; /* Clean modern font */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px;
+    /* Removed gridline background-image and background-size */
+    background-color: var(--bg-color); 
+    border: 1px solid var(--card-border);
+}
+
+/* --- Helper Classes --- */
+.highlight { color: var(--accent-blue); }
+
+/* --- Hero Section --- */
+.hero {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+    align-items: start;
+}
+
+.tagline {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.main-title {
+    font-size: 4rem; /* 64px */
+    line-height: 1.1;
+    color: var(--text-highlight);
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.sub-title {
+    font-size: 1.25rem; /* 20px */
+    margin-bottom: 30px;
+    max-width: 90%;
+}
+
+.pain-points {
+    list-style: none;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+.pain-points li {
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.pain-points li::before {
+    content: "—";
+    position: absolute;
+    left: -20px;
+    color: var(--accent-blue);
+}
+
+/* --- Hero Sidebar --- */
+.workshop-callout {
+    text-align: right;
+    border-bottom: 1px solid var(--accent-blue);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.complimentary {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--accent-blue);
+}
+
+.free-workshop {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-highlight);
+    line-height: 1.2;
+}
+
+.workshop-details {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    color: var(--text-main);
+}
+
+/* --- Updated Speaker & Background Box Styles --- */
+
+/* The main container for the speaker section */
+.speaker-section {
+    display: flex;
+    justify-content: center; /* Centers the whole block */
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    /* Optional: subtle grid overlay effect to match flyer if you want */
+}
+
+/* The Blue Background Box with CURVED edges */
+.speaker-background-box {
+    position: absolute;
+    width: 250px;  /* Adjust width as needed */
+    height: 180px; /* Adjust height (e.g., 75% of image height) */
+    background-color: var(--accent-blue); /* The same border blue color */
+    border-radius: 15px; /* Adjust for more or less curve */
+    z-index: 1; /* Puts it behind the speaker image */
+    transform: translateY(10px); /* Optional: shifts box down slightly */
+}
+
+/* The Speaker Card (Photo and Name Text) */
+.speaker-card {
+    position: relative;
+    z-index: 2; /* Puts it in front of the background box */
+    text-align: center;
+    /* No border needed here now, as we have the blue box behind */
+    background-color: transparent;
+    padding: 20px;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* The Speaker Photo with SHADOW and slightly smaller border radius */
+.speaker-photo {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px; /* Slightly less curved than the blue box */
+    margin-bottom: 15px;
+    /* Adds the SHADOW */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); /* Adjust blur and opacity as needed */
+}
+
+.speaker-name {
+    font-size: 1.5rem;
+    color: var(--text-highlight);
+    font-weight: 700;
+}
+
+.speaker-title {
+    color: var(--accent-blue);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.speaker-desc {
+    font-size: 12px;
+    color: var(--text-main);
+}
+/* --- Takeaways Section --- */
+.takeaways {
+    margin-bottom: 80px;
+    border-top: 1px solid var(--card-border);
+    padding-top: 40px;
+}
+
+.section-title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--accent-blue);
+    margin-bottom: 40px;
+}
+
+.takeaway-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.takeaway-item {
+    border: 1px solid var(--card-border);
+    padding: 30px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.takeaway-item:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.2);
+}
+
+.item-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+}
+
+.item-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-highlight);
+    margin-bottom: 10px;
+}
+
+/* --- Footer --- */
+/* --- Updated Footer & Button Styles --- */
+/* --- Updated Footer with Dividers --- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--card-border);
+    padding: 60px 0;
+    margin-top: 60px;
+}
+
+.footer-grid {
+    display: flex; /* Changed from grid to flex for better divider control */
+    align-items: center;
+    gap: 30px;
+}
+
+/* The Vertical Divider Line */
+.info-divider {
+    width: 1px;
+    height: 40px;
+    background-color: var(--card-border); /* Subtle color matching your theme */
+}
+
+.info-item {
+    text-align: left;
+}
+
+.info-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--accent-blue); /* Using your accent color for labels */
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-highlight);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .footer-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Hide dividers on mobile to keep the vertical list clean */
+    .info-divider {
+        display: none;
+    }
+
+    .info-item {
+        text-align: center;
+    }
+}
+.cta-block {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-button-large {
+    background-color: var(--accent-cta);
+    color: white;
+    text-decoration: none;
+    padding: 20px 45px;
+    border-radius: 5px; /* Square edges for a more professional IT look */
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-cta);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.cta-button-large:hover {
+    background-color: transparent;
+    color: var(--accent-cta);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+.cta-subtext {
+    font-size: 13px;
+    color: var(--text-main);
+    opacity: 0.8;
+}
+
+/* Responsive fix for the new button */
+@media (max-width: 900px) {
+    .footer {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .cta-button-large {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .main-title { font-size: 3rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-sidebar { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .workshop-callout { text-align: center; }
+    .speaker-card { margin: 0 auto; }
+    .takeaway-grid { grid-template-columns: 1fr; }
+    .footer { flex-direction: column-reverse; align-items: center; gap: 40px; text-align: center; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; text-align: center;}
+    .cta-block { align-items: center; text-align: center; width: 100%;}
+}
